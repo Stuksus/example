@@ -19,13 +19,17 @@
             Дата
         </td>
         <td>
+            ISBN
+        </td>
+        <td>
             Жанр
         </td>
     </tr>
     <?php
-
+    header( 'Content-Type: text/html; charset=utf-8' );
     $bd = mysqli_connect("localhost", "rooting", "123123", "firstDataBase");
-    $res = "select * from example";
+    mysqli_set_charset($bd,'utf8');
+    $res = "select * from books";
     $sql = mysqli_query($bd, $res);
     $kol = mysqli_num_rows($sql);
 
